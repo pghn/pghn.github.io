@@ -1,0 +1,38 @@
+[
+  
+  {
+    "title": "极简配置linux环境v2ray代理",
+    "url": "/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/",
+    "categories": "",
+    "tags": "",
+    "date": "2023-11-23 10:05:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题需要准备的环境，用到的信息  linux bash curl unzip 等基础命令  python3  国内网络连接  vmess连接或订阅连接首先需要获取v2ray, 当前没有代理，可能无法访问github, 这里采用第三方中转ghproxy.com,或者mirror.g...",
+    "content": "  本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题需要准备的环境，用到的信息  linux bash curl unzip 等基础命令  python3  国内网络连接  vmess连接或订阅连接首先需要获取v2ray, 当前没有代理，可能无法访问github, 这里采用第三方中转ghproxy.com,或者mirror.ghproxy.com 然后解压进某个目录wget https://ghproxy.com/https://github.com/v2fly/v2ray-core/releases/download/v5.11.0/v2ray-linux-64.zipunzip v2ray-linux-64.zip -d ~/v2ray此时v2ray-core已经安装完毕，只需要一个配置好的config.json就可以开始代理。config.json一般由v2rayN, Qv2ray这样的客户端根据订阅地址获取服务器配置，这里我们不安装这些客户端，而采用最简单的方式，直接python3执行一个vmess2json脚本，脚本在https://github.com/boypt/vmess2json.git, 可采用前边第三方中转方式clonepython3 vmess2json.py -o config.json --inbounds \"socks:10808,http:10809\" vmess://## 或者## python3 vmess2json.py --subscribe https://订阅连接最后将config.json 移动到v2ray的解压目录，即可开始使用代理服务器，端口在上边这条指令中指定.使用代理服务器需要设置代理服务器环境变量 $HTTPS_PROXY与$HTTP_PROXY，可自行在系统设置中设置，也可在终端中采用export设置配置完毕。"
+  },
+  
+  {
+    "title": "APUE Intro",
+    "url": "/posts/apue-intro/",
+    "categories": "",
+    "tags": "",
+    "date": "2023-11-17 13:54:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "实现ls命令了解文件与目录的概念，主要用到dirent.h 中DIR * 和 struct dirent, 前者处理文件流，后者为文件入口描述，结构体可以从man dirent 中看到。// input dirname const char *DIR *d;struct dirent *dir;d = opendir(dirname);if(d){    while ((dir = read...",
+    "content": "实现ls命令了解文件与目录的概念，主要用到dirent.h 中DIR * 和 struct dirent, 前者处理文件流，后者为文件入口描述，结构体可以从man dirent 中看到。// input dirname const char *DIR *d;struct dirent *dir;d = opendir(dirname);if(d){    while ((dir = readdir(d)) != NULL) {        printf(\"%s\\n\", dir-&gt;d_name);\t    }\t    closedir(d);}实现cat 命令了解输入输出，重定向，管道，文件描述符等概念，buffered io 与 unbuffered io FILE *fd = fopen(argv[1], \"r\");    if(fd == NULL){    fprintf(stderr, \"cannot open file\");    return EXIT_FAILURE;}const int buffersize = 32768;char buff[buffersize];size_t n = 0;while ((n = fread(buff, sizeof(char), buffersize, fd)))    if (n != fwrite(buff, sizeof(char), n, stdout)){        fprintf(stderr, \"write to stdout error\");        return EXIT_FAILURE;    }    fclose(fd);return EXIT_SUCCESS;程序与进程跳过Unix标准化与实现没啥用文件IOUnbuffered I/O 是指每个read write都会在唤起一个systemcall. 多进程资源共享，原子操作的概念文件描述符测试一下ubuntu 18.04 linux kernel 5.4.0 的文件描述符上限FOPEN_MAX-1, 包含在unistd.h中#include &lt;stdio.h&gt;#include &lt;unistd.h&gt;int main(){        printf(\"%d open_max\\n\", FOPEN_MAX);        return 0;}// 16 open_maxopen 和 openat打开文件man 2 open文件名最大长度问题，有些系统会把超出长度的字符截断，因为用了name[len-1]=\\0这种方式，_POSIX_NO_TRUNC控制该功能man create 创建文件, man close 关闭文件进程间的文件共享内核维护三张表，进程表-&gt;某进程文件描述符表-&gt;系统已开启文件表-&gt;v_node表&lt;-&gt;i_node表进程间的文件共享有系统文件表中的两个不同项指向同一个i_node实现，进程在系统已开启文件表中指向各自的文件项"
+  }
+  
+]
+
