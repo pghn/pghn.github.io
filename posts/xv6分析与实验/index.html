@@ -35,24 +35,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="极简配置linux环境v2ray代理" />
+<meta property="og:title" content="xv6分析与实验" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题" />
-<meta property="og:description" content="本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题" />
-<link rel="canonical" href="http://localhost:4000/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/" />
+<meta name="description" content="首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6" />
+<meta property="og:description" content="首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6" />
+<link rel="canonical" href="/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/" />
+<meta property="og:url" content="/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/" />
 <meta property="og:site_name" content="pghn blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-23T10:05:00+08:00" />
+<meta property="article:published_time" content="2024-01-03T21:28:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="极简配置linux环境v2ray代理" />
+<meta property="twitter:title" content="xv6分析与实验" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-23T10:05:00+08:00","datePublished":"2023-11-23T10:05:00+08:00","description":"本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题","headline":"极简配置linux环境v2ray代理","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/"},"url":"http://localhost:4000/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-03T21:28:00+08:00","datePublished":"2024-01-03T21:28:00+08:00","description":"首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6","headline":"xv6分析与实验","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"},"url":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>极简配置linux环境v2ray代理 | pghn blog
+  <title>xv6分析与实验 | pghn blog
   </title>
 
   <!--
@@ -278,7 +278,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/assets/img/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -447,7 +447,7 @@
         
           
             
-              <span>极简配置linux环境v2ray代理</span>
+              <span>xv6分析与实验</span>
             
 
           
@@ -515,6 +515,85 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -529,6 +608,38 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -556,7 +667,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>极简配置linux环境v2ray代理</h1>
+    <h1 data-toc-skip>xv6分析与实验</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -572,13 +683,13 @@
 
 <time
   
-  data-ts="1700705100"
+  data-ts="1704288480"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/23
+  2024/01/03
 </time>
 
       </span>
@@ -623,9 +734,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="396 字"
+  title="134 字"
 >
-  <em>2 分钟</em>阅读</span>
+  <em>1 分钟</em>阅读</span>
 
       </div>
       <!-- .d-flex -->
@@ -634,52 +745,32 @@
   </header>
 
   <div class="content">
-    <blockquote class="prompt-info">
-  <p>本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题</p>
-</blockquote>
-
-<p>需要准备的环境，用到的信息</p>
+    <p>首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作</p>
 <ol>
-  <li>linux bash curl unzip 等基础命令</li>
-  <li>python3</li>
-  <li>国内网络连接</li>
-  <li>vmess连接或订阅连接</li>
+  <li>安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行</li>
+  <li>build xv6</li>
 </ol>
 
-<p>首先需要获取v2ray, 当前没有代理，可能无法访问github, 这里采用第三方中转<a href="https://ghproxy.com">ghproxy.com</a>,或者<a href="mirror.ghproxy.com">mirror.ghproxy.com</a> 然后解压进某个目录</p>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>wget https://ghproxy.com/https://github.com/v2fly/v2ray-core/releases/download/v5.11.0/v2ray-linux-64.zip
-unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>此时v2ray-core已经安装完毕，只需要一个配置好的<code class="language-plaintext highlighter-rouge">config.json</code>就可以开始代理。</p>
-
-<p>config.json一般由<strong>v2rayN</strong>, <strong>Qv2ray</strong>这样的客户端根据订阅地址获取服务器配置，这里我们不安装这些客户端，而采用最简单的方式，直接<code class="language-plaintext highlighter-rouge">python3</code>执行一个<code class="language-plaintext highlighter-rouge">vmess2json</code>脚本，脚本在<a href="https://github.com/boypt/vmess2json.git">https://github.com/boypt/vmess2json.git</a>, 可采用前边第三方中转方式clone</p>
+<h2 id="安装qemu"><span class="me-2">安装qemu</span><a href="#安装qemu" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>ubuntu 环境下非常简单</p>
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>python3 vmess2json.py <span class="nt">-o</span> config.json <span class="nt">--inbounds</span> <span class="s2">"socks:10808,http:10809"</span> vmess://
-<span class="c">## 或者</span>
-<span class="c">## python3 vmess2json.py --subscribe https://订阅连接</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>最后将config.json 移动到v2ray的解压目录，即可开始使用代理服务器，端口在上边这条指令中指定.</p>
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>qemu qemu-system-x86
 
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>./v2ray run
+<span class="c"># qemu-system-x86_64 --version</span>
+<span class="c"># QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.15)</span>
+<span class="c"># Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>使用代理服务器需要设置代理服务器环境变量 <code class="language-plaintext highlighter-rouge">$HTTPS_PROXY</code>与<code class="language-plaintext highlighter-rouge">$HTTP_PROXY</code>，可自行在系统设置中设置，也可在终端中采用<code class="language-plaintext highlighter-rouge">export</code>设置</p>
+<h2 id="build-xv6"><span class="me-2">build xv6</span><a href="#build-xv6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>先把仓库克隆下来，然后安装build-essential, 直接<code class="language-plaintext highlighter-rouge">make qemu</code></p>
 
-<p>配置完毕。</p>
-
-<p>推荐后续采用更方便的<strong>v2raya</strong>, <strong>Qv2ray</strong>等客户端，该解决方案只是为了迅速解决代理问题！</p>
+<p><a href="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/make_qemu.png" class="popup img-link  shimmer"><img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/make_qemu.png" alt="image" loading="lazy"></a></p>
 
   </div>
 
@@ -721,7 +812,7 @@ unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
 
       
 
-      <a href="http://service.weibo.com/share/share.php?title=%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86%20-%20pghn%20blog&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E6%259E%2581%25E7%25AE%2580%25E9%2585%258D%25E7%25BD%25AElinux%25E7%258E%25AF%25E5%25A2%2583v2ray%25E4%25BB%25A3%25E7%2590%2586%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="http://service.weibo.com/share/share.php?title=xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C%20-%20pghn%20blog&url=%2Fposts%2Fxv6%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E5%25AE%259E%25E9%25AA%258C%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
@@ -796,6 +887,11 @@ unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
 
 
 
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">文章内容</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -849,13 +945,9 @@ unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
   
 
   
-    <a
-      href="/posts/apue-intro/"
-      class="btn btn-outline-primary"
-      aria-label="上一篇"
-    >
-      <p>APUE Intro</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="上一篇">
+      <p>-</p>
+    </div>
   
 
   
@@ -883,7 +975,7 @@ unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/pghn">pghn</a>.
    <!--  
       <span
@@ -1072,9 +1164,16 @@ unzip v2ray-linux-64.zip <span class="nt">-d</span> ~/v2ray
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
 
 
 

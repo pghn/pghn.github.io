@@ -44,8 +44,10 @@ const resource = [
 const allowedDomains = [
   
 
-  'localhost:4000',
+  '',
 
+  
+    'cdn-1256878627.cos.ap-nanjing.myqcloud.com',
   
 
   'fonts.gstatic.com',

@@ -39,14 +39,14 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="pghn" />
 <meta property="og:description" content="pghn" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="/" />
+<meta property="og:url" content="/" />
 <meta property="og:site_name" content="pghn blog" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="pghn blog" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"pghn","headline":"pghn blog","name":"pghn","sameAs":["https://github.com/pghn"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"pghn","headline":"pghn blog","name":"pghn","sameAs":["https://github.com/pghn"],"url":"/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -272,7 +272,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/assets/img/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -558,14 +558,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/%E6%9E%81%E7%AE%80%E9%85%8D%E7%BD%AElinux%E7%8E%AF%E5%A2%83v2ray%E4%BB%A3%E7%90%86/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">极简配置linux环境v2ray代理</h1>
+            <h1 class="card-title my-2 mt-md-0">xv6分析与实验</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -575,19 +575,10 @@
 
 
 
-                
-  本文只考虑在最短时间内，采用最简单的方式在linux环境下搭梯子，只考虑便捷易用，而不考虑长期稳定性，个性化等问题
+                首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作
 
-
-需要准备的环境，用到的信息
-
-  linux bash curl unzip 等基础命令
-  python3
-  国内网络连接
-  vmess连接或订阅连接
-
-
-首先需要获取v2ray, 当前没有代理，可能无法访问github, 这里采用第三方中转ghproxy.co...
+  安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行
+  b...
               </p>
             </div>
 
@@ -605,11 +596,11 @@
 
 <time
   
-  data-ts="1700705100"
+  data-ts="1704288480"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/23
+  2024/01/03
 </time>
 
 
@@ -695,7 +686,7 @@
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/pghn">pghn</a>.
    <!--  
       <span
