@@ -37,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="xv6分析与实验" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6" />
-<meta property="og:description" content="首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6" />
+<meta name="description" content="前言" />
+<meta property="og:description" content="前言" />
 <link rel="canonical" href="/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/" />
 <meta property="og:url" content="/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/" />
 <meta property="og:site_name" content="pghn blog" />
@@ -47,7 +47,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="xv6分析与实验" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-03T21:28:00+08:00","datePublished":"2024-01-03T21:28:00+08:00","description":"首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作 安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行 build xv6","headline":"xv6分析与实验","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"},"url":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-03T21:28:00+08:00","datePublished":"2024-01-03T21:28:00+08:00","description":"前言","headline":"xv6分析与实验","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"},"url":"/posts/xv6%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E9%AA%8C/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -278,7 +278,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/ghpages/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -591,6 +591,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -645,6 +708,38 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -734,9 +829,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="134 字"
+  title="389 字"
 >
-  <em>1 分钟</em>阅读</span>
+  <em>2 分钟</em>阅读</span>
 
       </div>
       <!-- .d-flex -->
@@ -745,10 +840,15 @@
   </header>
 
   <div class="content">
-    <p>首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作</p>
+    <h3 id="前言"><span class="me-2">前言</span><a href="#前言" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>入职之前打算&amp;必须把计算机基础知识过一遍，xv6系列是为了全面复习操作系统，跟随<a href="https://book.douban.com/subject/35550326/">《操作系统原型——xv6分析与实验》</a>重新学一遍，一些自己已经比较熟悉的（比如xv6开发环境本身的配置）会写得较简单。xv6课程本身已经全面转向xv6-riscv，但依然选用xv6-public，只是为了图方便。</p>
+
+<p>第一节首先要完成xv6调试环境的配置，包括QEMU，GDB，以及源码build tool-chain, 这里实验对象为xv6-public，不是xv6-riscv, 目标平台为”x86 elf machine(like Linux or FreeBSD)”， 需要完成以下操作</p>
+
 <ol>
   <li>安装qemu， 确保 qemu-system-i386 或者 qemu-system-x86_64 能够执行</li>
-  <li>build xv6</li>
+  <li>build xv6, 确定能够make 成功</li>
 </ol>
 
 <h2 id="安装qemu"><span class="me-2">安装qemu</span><a href="#安装qemu" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -768,14 +868,28 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="build-xv6"><span class="me-2">build xv6</span><a href="#build-xv6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>先把仓库克隆下来，然后安装build-essential, 直接<code class="language-plaintext highlighter-rouge">make qemu</code></p>
+<p>先把xv6仓库克隆下来，然后安装build-essential, 直接<code class="language-plaintext highlighter-rouge">make qemu</code>，在qemu界面ctrl+p查看进程信息</p>
 
-<p><a href="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/make_qemu.png" class="popup img-link  shimmer"><img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/make_qemu.png" alt="image" loading="lazy"></a></p>
+<p><a href="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/ghpages/make_qemu.png" class="popup img-link  shimmer"><img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/ghpages/make_qemu.png" alt="image" loading="lazy"></a></p>
+
+<p>绑定gdb调试时<code class="language-plaintext highlighter-rouge">make qemu-gdb</code>, MakeFile全都写好了，gdb调试的端口号在MakeFile中有写，执行过程的最后一句也能直接看到，当前是26000, <code class="language-plaintext highlighter-rouge">.gdbinit</code>文件带来的安全警告自行解决</p>
+
+<h3 id="多核调试"><span class="me-2">多核调试</span><a href="#多核调试" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>gdb中使用<code class="language-plaintext highlighter-rouge">i thread</code> 查看不同cpu的状态， 使用<code class="language-plaintext highlighter-rouge">thread apply [ID list] command</code> 控制不同的线程执行gdb命令, 通过更改Makefile中 令CPUS := 3完成3线程启动
+<a href="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/ghpages/i_threads.png" class="popup img-link  shimmer"><img src="https://cdn-1256878627.cos.ap-nanjing.myqcloud.com/ghpages/i_threads.png" alt="image" loading="lazy"></a></p>
+
 
   </div>
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/%E5%A4%8D%E4%B9%A0/">复习</a>,
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+      </div>
     
 
     <!-- tags -->
@@ -925,6 +1039,10 @@
 
 
 
+  
+
+  
+    
 
 
 
